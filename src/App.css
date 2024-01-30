@@ -1,54 +1,79 @@
 /* App.css */
 
-.App {
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: rgb(211, 225, 245);
+}
+
+/* Header styles */
+header {
+  background-color: #282c34;
+  padding: 20px;
+  text-align: center;
+  color: rgb(134, 168, 216);
+}
+
+/* Main container styles */
+.App-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* Main content styles */
+.App-main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 20px;
+}
+
+/* Speedometer container styles */
+.speedometer-container {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Zoom effect on hover */
+.speedometer-container.zoom-on-hover:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* KPI styles */
+.kpi-item {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Left KPIs styles */
+.left-kpi {
+  grid-column: span 4;
 }
 
-.App-link {
-  color: #61dafb;
+/* Central image styles */
+.central-image-container {
+  grid-column: span 4;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Right KPIs styles */
+.right-kpi {
+  grid-column: span 4;
 }
 
-/* Add your custom styles here */
+/* Modal styles */
 .modal {
   position: fixed;
-  background-color: white;
+  background-color: rgb(211, 225, 245); /* Set the background color with transparency */
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   max-width: 600px;
   width: 100%;
-  transition: transform 0.5s ease-in-out; /* Make sure to match this with the JS transition duration */
+  transition: transform 0.5s ease-in-out;
 }
 
 .overlay {
@@ -68,6 +93,14 @@
   display: block;
 }
 
+/* Add styles for the speedometer name */
+.speedometer-name {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Hidden and visible classes */
 .hidden {
   display: none;
 }
@@ -76,38 +109,38 @@
   display: block;
 }
 
-/* Add styles to split KPI names on both sides */
-.kpi-list {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+/* Media queries for responsiveness */
+@media only screen and (max-width: 1200px) {
+  .left-kpi, .right-kpi {
+    grid-column: span 12;
+  }
+
+  .speedometer-container.zoom-on-hover:hover {
+    transform: none;
+    transition: none;
+  }
 }
 
-.left-kpi {
-  left: 60px; /* Adjust as needed */
+@media only screen and (max-width: 768px) {
+  .left-kpi, .right-kpi {
+    grid-column: span 12;
+  }
+
+  .speedometer-container.zoom-on-hover:hover {
+    transform: none;
+    transition: none;
+  }
 }
 
-.right-kpi {
-  right: 60px; /* Adjust as needed */
+@media only screen and (max-width: 480px) {
+  .speedometer-container.zoom-on-hover:hover {
+    transform: none;
+    transition: none;
+  }
+}
+/* Add this CSS to change the color of the speedometer */
+.speedometer path.speedo-segment {
+  fill: rgba(21, 120, 14, 0.5); /* Replace with your preferred color */
 }
 
-.kpi {
-  padding: 10px;
-  background-color: #2196F3;
-  color: white;
-  cursor: pointer;
-  margin: 100px 0; /* Adjusted margin to 100px */
-  opacity: 1;
-  transition: opacity 0.5s ease-in-out;
-}
 
-.image-container {
-  margin-top: 20px; /* Adjust as needed */
-}
-
-/* Add styles for the speedometer name */
-.speedometer-name {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 10px;
-}

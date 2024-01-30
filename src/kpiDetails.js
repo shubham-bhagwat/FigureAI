@@ -7,6 +7,7 @@ const kpiDetailsData = {
         { detail: 'Sensors Integration', value: 'Robust' },
         // Add more details as needed
       ],
+      condition:'yes',
       speedometerValue: 70,
       currentValueText: 'Upper Level Systems',
     },
@@ -16,6 +17,7 @@ const kpiDetailsData = {
         { detail: 'Data Transfer Rate', value: 'Fast' },
         // Add more details as needed
       ],
+      condition:'yes',
       speedometerValue: 50,
       currentValueText: 'Connectivity',
     },
@@ -25,6 +27,7 @@ const kpiDetailsData = {
         { detail: 'Dexterity', value: 'Advanced' },
         // Add more details as needed
       ],
+      condition:'no',
       speedometerValue: 80,
       currentValueText: 'Manipulation',
     },
