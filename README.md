@@ -1,6 +1,6 @@
 # FigureAI Project Dashboard
 
-Welcome to the FigureAI Project Dashboard – a web application designed to visualize key performance indicators (KPIs) with interactive speedometers. This dashboard provides insights into various aspects of your project, including Upper Level Systems, Connectivity, Manipulation, Locomotion, AI/Intelligence, Perception, and Electrification.
+Welcome to the FigureAI Project Dashboard – a web application designed to visualize key performance indicators (KPIs) with interactive speedometers. This dashboard provides insights into various aspects of FigureAI project, including Upper Level Systems, Connectivity, Manipulation, Locomotion, AI/Intelligence, Perception, and Electrification.
 
 ## Features
 
