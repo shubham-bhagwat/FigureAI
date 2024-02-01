@@ -25,7 +25,7 @@ Follow these steps to set up and run the project on your local machine:
 
 2. **Install Dependencies**:
     ```bash
-    cd figureai-dashboard
+    cd FigureAI
     npm install
 
 3. **Run the Application**: 
