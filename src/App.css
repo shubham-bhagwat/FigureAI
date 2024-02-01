@@ -1,6 +1,5 @@
 /* App.css */
 
-/* Global styles */
 body {
   margin: 0;
   padding: 0;
@@ -8,7 +7,6 @@ body {
   background-color: rgb(211, 225, 245);
 }
 
-/* Header styles */
 header {
   background-color: #282c34;
   padding: 20px;
@@ -16,7 +14,6 @@ header {
   color: rgb(134, 168, 216);
 }
 
-/* Main container styles */
 .App-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -24,7 +21,6 @@ header {
   min-height: 100vh;
 }
 
-/* Main content styles */
 .App-main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -32,42 +28,35 @@ header {
   gap: 20px;
 }
 
-/* Speedometer container styles */
 .speedometer-container {
   text-align: center;
 }
 
-/* Zoom effect on hover */
 .speedometer-container.zoom-on-hover:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
 }
 
-/* KPI styles */
 .kpi-item {
   text-align: center;
   margin-bottom: 10px;
 }
 
-/* Left KPIs styles */
 .left-kpi {
   grid-column: span 4;
 }
 
-/* Central image styles */
 .central-image-container {
   grid-column: span 4;
 }
 
-/* Right KPIs styles */
 .right-kpi {
   grid-column: span 4;
 }
 
-/* Modal styles */
 .modal {
   position: fixed;
-  background-color: rgb(211, 225, 245); /* Set the background color with transparency */
+  background-color: rgb(211, 225, 245);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -93,14 +82,12 @@ header {
   display: block;
 }
 
-/* Add styles for the speedometer name */
 .speedometer-name {
   text-align: center;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-/* Hidden and visible classes */
 .hidden {
   display: none;
 }
@@ -109,7 +96,6 @@ header {
   display: block;
 }
 
-/* Media queries for responsiveness */
 @media only screen and (max-width: 1200px) {
   .left-kpi, .right-kpi {
     grid-column: span 12;
@@ -138,9 +124,8 @@ header {
     transition: none;
   }
 }
-/* Add this CSS to change the color of the speedometer */
+
+/* Dynamic color change for speedometer segments */
 .speedometer path.speedo-segment {
-  fill: rgba(21, 120, 14, 0.5); /* Replace with your preferred color */
+  fill: var( rgba(33, 14, 120, 0.5),--speedometer-color);
 }
-
-
