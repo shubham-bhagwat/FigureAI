@@ -6,6 +6,11 @@ import Speedometer from 'react-d3-speedometer';
 import './App.css';
 import imageSrc from './logo.png';
 import kpiDetailsData from './kpiDetails.js';
+import WorkPackage1 from './work_packages/workPackage1';
+import WorkPackage2 from './work_packages/workPackage2';
+import WorkPackage3 from './work_packages/workPackage3';
+import WorkPackage4 from './work_packages/workPackage4';
+
 
 Modal.setAppElement('#root');
 
@@ -17,6 +22,7 @@ function App() {
   const [currentValueText, setCurrentValueText] = useState('');
   const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
   const [speedometerColor, setSpeedometerColor] = useState('#00FF00'); // Default color
+  const [activeTab, setActiveTab] = useState(1); // Default to the first tab
 
   const kpiDetailsRef = useRef(null);
 
@@ -75,7 +81,27 @@ function App() {
     } catch (error) {
       console.error('Error fetching KPI details:', error);
     }
+  }
+  const switchTab = (tabIndex) => {
+    setActiveTab(tabIndex);
   };
+
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 1:
+        return <div>Work Package 1 content</div>;
+      case 2:
+        return <div>Work Package 2 content</div>;
+      case 3:
+        return <div>Work Package 3 content</div>;
+      case 4:
+        return <div>Work Package 4 content</div>;
+      // Add cases for other work packages
+      default:
+        return null;
+    }
+  };
+  
   
 
   return (
@@ -83,7 +109,23 @@ function App() {
       <header>
         <h1>FigureAI Project Dashboard</h1>
       </header>
+      <div className="tab-menu">
+        <button className={activeTab === 1 ? 'active' : ''} onClick={() => switchTab(1)}>
+          Work Package 1
+        </button>
+        <button className={activeTab === 2 ? 'active' : ''} onClick={() => switchTab(2)}>
+          Work Package 2
+        </button>
+        <button className={activeTab === 3 ? 'active' : ''} onClick={() => switchTab(3)}>
+          Work Package 3
+        </button>
+        <button className={activeTab === 4 ? 'active' : ''} onClick={() => switchTab(4)}>
+          Work Package 4
+        </button>
+        {/* Add buttons for other work packages */}
+      </div>
       <div className="App-main">
+        
         <div className="left-kpi">
           {Object.keys(kpiDetailsData).slice(0, 4).map((kpiTitle) => (
             <div key={kpiTitle} className="kpi-item" onClick={(e) => showDetails(kpiTitle, e)}>
