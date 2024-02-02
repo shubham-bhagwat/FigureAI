@@ -35,6 +35,7 @@ header {
 .speedometer-container.zoom-on-hover:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .kpi-item {
@@ -128,4 +129,26 @@ header {
 /* Dynamic color change for speedometer segments */
 .speedometer path.speedo-segment {
   fill: var( rgba(33, 14, 120, 0.5),--speedometer-color);
+}
+
+
+/* Add this to your existing CSS or create a new CSS file */
+.tab-menu {
+  display: flex;
+  background-color: #a9c8f2;
+  padding: 10px;
+}
+
+.tab-menu button {
+  background-color: #8da4c4;
+  border: none;
+  padding: 10px 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.tab-menu button.active {
+  background-color: #21185f;
+  color: white;
 }
