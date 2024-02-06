@@ -10,6 +10,7 @@ import WorkPackage1 from './work_packages/workPackage1';
 import WorkPackage2 from './work_packages/workPackage2';
 import WorkPackage3 from './work_packages/workPackage3';
 import WorkPackage4 from './work_packages/workPackage4';
+import ParticleAnimation from './ParticleAnimation.js'; 
 
 
 Modal.setAppElement('#root');
@@ -103,9 +104,11 @@ function App() {
   };
   
   
+  
 
   return (
     <div className="App-container">
+      <ParticleAnimation />
       <header>
         <h1>FigureAI Project Dashboard</h1>
       </header>

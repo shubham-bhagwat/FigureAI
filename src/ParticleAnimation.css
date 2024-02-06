@@ -1,0 +1,9 @@
+/* ParticleAnimation.css */
+canvas {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Use viewport width */
+    height: 100vh; /* Use viewport height */   
+  }
