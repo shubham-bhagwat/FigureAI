@@ -1,21 +1,35 @@
-// WorkPackages/WorkPackage2.js
-import React from 'react';
-import Speedometer from 'react-d3-speedometer';
-import RedSpeedometer from '../App.js'; // Assuming you have a RedSpeedometer component
-import kpiDetailsData from '../kpiDetails.js';
+// WorkPackage1.js
 
-const WorkPackage2 = ({ showDetails }) => {
-  const kpiTitles = Object.keys(kpiDetailsData).slice(4);
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+
+const WorkPackage1 = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
-    <div className="App-main">
-      {kpiTitles.map((kpiTitle) => (
-        <div key={kpiTitle} className="kpi-item" onClick={(e) => showDetails(kpiTitle, e)}>
-          <RedSpeedometer value={kpiDetailsData[kpiTitle].speedometerValue} title={kpiTitle} />
-        </div>
-      ))}
+    <div>
+      {/* <button onClick={openModal}>View Work Package 1 Details</button> */}
+      
+        <h2>Work Package 4 Details</h2>
+        <p>This is the details for Work Package 1.</p>
+
+        <p>This is the details for Work Package 1.</p>
+        <p>This is the details for Work Package 1.</p>
+        <p>This is the details for Work Package 1.</p>
+        <p>This is the details for Work Package 1.</p>
+        <p>This is the details for Work Package 1.</p>
+        
+      
     </div>
   );
 };
 
-export default WorkPackage2;
+export default WorkPackage1;

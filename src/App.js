@@ -139,8 +139,13 @@ function App() {
         overlayClassName="overlay"
       >
         <div>
-          <WorkPackage1 />
-        </div>
+        {modalData.title === 'Work Package 1' && <WorkPackage1 />}
+        {modalData.title === 'Work Package 2' && <WorkPackage2 />}
+        {modalData.title === 'Work Package 3' && <WorkPackage3 />}
+        {modalData.title === 'Work Package 4' && <WorkPackage4 />}
+        
+      
+      </div>
       </Modal>
       <div className="App-main">
         
