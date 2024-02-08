@@ -24,7 +24,8 @@ function App() {
   const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
   const [speedometerColor, setSpeedometerColor] = useState('#00FF00'); // Default color
   const [activeTab, setActiveTab] = useState(1); // Default to the first tab
-
+  const [isModalOpen_, setIsModalOpen_] = useState(false)
+  const [modalData, setModalData] = useState({});
   const kpiDetailsRef = useRef(null);
 
   useEffect(() => {
@@ -85,25 +86,29 @@ function App() {
   }
   const switchTab = (tabIndex) => {
     setActiveTab(tabIndex);
-  };
-
-  const renderTabContent = () => {
-    switch (activeTab) {
+    // Dummy data for demonstration, replace this with your actual data logic
+    switch (tabIndex) {
       case 1:
-        return <div>Work Package 1 content</div>;
+        setModalData({ title: 'Work Package 1', content: 'Dummy data for Work Package 1' });
+        break;
       case 2:
-        return <div>Work Package 2 content</div>;
+        setModalData({ title: 'Work Package 2', content: 'Dummy data for Work Package 2' });
+        break;
       case 3:
-        return <div>Work Package 3 content</div>;
+        setModalData({ title: 'Work Package 3', content: 'Dummy data for Work Package 3' });
+        break;
       case 4:
-        return <div>Work Package 4 content</div>;
-      // Add cases for other work packages
+        setModalData({ title: 'Work Package 4', content: 'Dummy data for Work Package 4' });
+        break;
       default:
-        return null;
+        break;
     }
+    setIsModalOpen_(true);
   };
-  
-  
+  const closeModal = () => {
+    setIsModalOpen_(false);
+    setModalData({});
+  }; 
   
 
   return (
@@ -125,8 +130,18 @@ function App() {
         <button className={activeTab === 4 ? 'active' : ''} onClick={() => switchTab(4)}>
           Work Package 4
         </button>
-        {/* Add buttons for other work packages */}
       </div>
+      <Modal
+        isOpen={isModalOpen_}
+        onRequestClose={closeModal}
+        contentLabel="Work Package Details"
+        className="modal-overlay"
+        overlayClassName="overlay"
+      >
+        <div>
+          <WorkPackage1 />
+        </div>
+      </Modal>
       <div className="App-main">
         
         <div className="left-kpi">
@@ -231,7 +246,7 @@ const GreenSpeedometer = ({ value, title, color }) => (
       maxValue={100}
       value={value}
       color={color}
-      segmentColors={['#00FF00']}
+      segmentColors={['#9AD721']}
     />
     <h3>{title}</h3>
   </div>
@@ -246,7 +261,7 @@ const RedSpeedometer = ({ value, title, color }) => (
       maxValue={100}
       value={value}
       color={color}
-      segmentColors={['#FF0000']}
+      segmentColors={['#981D25']}
     />
     <h3>{title}</h3>
   </div>

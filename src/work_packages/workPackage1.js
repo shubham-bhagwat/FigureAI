@@ -16,16 +16,18 @@ const WorkPackage1 = () => {
 
   return (
     <div>
-      <button onClick={openModal}>View Work Package 1 Details</button>
-      <Modal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        contentLabel="Work Package 1 Details"
-      >
+      {/* <button onClick={openModal}>View Work Package 1 Details</button> */}
+      
         <h2>Work Package 1 Details</h2>
         <p>This is the details for Work Package 1.</p>
-        <button onClick={closeModal}>Close</button>
-      </Modal>
+
+        <p>This is the details for Work Package 1.</p>
+        <p>This is the details for Work Package 1.</p>
+        <p>This is the details for Work Package 1.</p>
+        <p>This is the details for Work Package 1.</p>
+        <p>This is the details for Work Package 1.</p>
+        
+      
     </div>
   );
 };
