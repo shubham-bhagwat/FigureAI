@@ -19,15 +19,7 @@ const WorkPackage1 = () => {
       {/* <button onClick={openModal}>View Work Package 1 Details</button> */}
       
         <h2>Work Package 2 Details</h2>
-        <p>This is the details for Work Package 1.</p>
-
-        <p>This is the details for Work Package 1.</p>
-        <p>This is the details for Work Package 1.</p>
-        <p>This is the details for Work Package 1.</p>
-        <p>This is the details for Work Package 1.</p>
-        <p>This is the details for Work Package 1.</p>
-        
-      
+        <p>This is the details for Work Package 2.</p>     
     </div>
   );
 };

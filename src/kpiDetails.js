@@ -35,7 +35,7 @@ const kpiDetailsData = {
       { detail: 'Terrain Adaptability', value: 'Versatile' },
       // Add more details as needed
     ],
-    condition: 'no', // Update with actual condition
+    condition: 'yes', // Update with actual condition
     speedometerValue: 60,
     currentValueText: 'Locomotion',
   },
@@ -60,7 +60,7 @@ const kpiDetailsData = {
       // Add details for 'Electrification'
     ],
     condition: 'yes', // Update with actual condition
-    speedometerValue: 100,
+    speedometerValue: 75,
     currentValueText: 'Electrification',
   },
 };

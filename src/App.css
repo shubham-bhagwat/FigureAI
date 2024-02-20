@@ -1,12 +1,10 @@
-/* App.css */
-
 body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: transparent;
   z-index: 998;
-  overflow:auto;
+  overflow: auto;
 }
 
 header {
@@ -22,16 +20,16 @@ header {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   min-height: 100vh;
+  overflow: auto;
   /* z-index: 999; */
 }
-
-
 
 .App-main {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto auto auto;
   gap: 20px;
+  overflow: auto;
   /* z-index: 999; */
 }
 
@@ -63,6 +61,7 @@ header {
 .central-image-container {
   grid-column: span 4;
   /* z-index: 999; */
+  overflow: auto;
 }
 
 .right-kpi {
@@ -202,8 +201,9 @@ html, body{
   margin: 0;
   padding: 0;
   background-color: #333;
-  overflow: hidden;
+  overflow: auto;
 }
 canvas{
   background-color: #000;
 }
+
